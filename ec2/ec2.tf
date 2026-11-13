@@ -1,6 +1,7 @@
 resource "aws_instance" "terraform" {
     ami= "ami-096ef200a877f36af"
     instance_type= "t3.small"
+    vpc_security_group_ids = [ aws_security_group.allow_all_ports.id]
 
     tags = {
        Name = "terraform"
